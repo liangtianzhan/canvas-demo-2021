@@ -6,14 +6,52 @@ autoSetCanvasSize(yyy);
 listenToUser(yyy);
 
 var eraserEnabled = false;
-eraser.onclick = function () {
-  eraserEnabled = true;
-  actions.className = "actions x";
-};
-pen.onclick = function () {
-  eraserEnabled = false;
-  actions.className = "actions";
-};
+brush.onclick = function () {
+  eraserEnabled=false;
+  brush.classList.add('active')
+  eraser.classList.remove('active')
+
+}
+eraser.onclick = function(){
+  eraserEnabled=true;
+  eraser.classList.add('active')
+  brush.classList.remove('active')
+
+}
+red.onclick = function(){
+  context.strokeStyle = '#b8465f';
+  context.fillStyle = '#b8465f';
+  red.classList.add('active')
+  green.classList.remove('active')
+  blue.classList.remove('active')
+  grey.classList.remove('active')
+}
+green.onclick = function(){
+  context.strokeStyle = '#338161';
+  context.fillStyle = '#338161';
+  red.classList.remove('active')
+  green.classList.add('active')
+  blue.classList.remove('active')
+  grey.classList.remove('active')
+}
+blue.onclick = function(){
+  context.strokeStyle = '#2e4286';
+  context.fillStyle = '#2e4286';
+  red.classList.remove('active')
+  green.classList.remove('active')
+  blue.classList.add('active')
+  grey.classList.remove('active')
+}
+grey.onclick = function(){
+  context.strokeStyle = '#2b2b2c';
+  context.fillStyle = '#2b2b2c';
+  red.classList.remove('active')
+  green.classList.remove('active')
+  blue.classList.remove('active')
+  grey.classList.add('active')
+}
+
+
 
 /**********/
 
@@ -35,7 +73,6 @@ function autoSetCanvasSize(canvas) {
 
 function drawCircle(x, y, radius) {
   context.beginPath();
-  context.fillStyle = "blue";
   context.arc(x, y, radius, 0, Math.PI * 2);
   context.fill();
 }
@@ -44,7 +81,6 @@ function drawLine(x1, y1, x2, y2) {
   context.beginPath();
   context.moveTo(x1, y1); //起点
   context.lineWidth = 10;
-  context.strokeStyle = "blue";
   context.lineTo(x2, y2);
   context.stroke();
   context.closePath();
@@ -56,7 +92,7 @@ function listenToUser(canvas) {
     x: undefined,
     y: undefined,
   };
-  //鼠标按下
+  //特性检测
   if (document.body.ontouchstart !== undefined) {
     //触屏设备
     canvas.ontouchstart = function (aaa) {

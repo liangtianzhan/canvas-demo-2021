@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="//at.alicdn.com/t/font_2519035_0sutbdnguvu.js"></script>
     <link rel="stylesheet" href="./syle.css">
   <meta charset="zh-Hans">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,19 @@
 <body>
   <canvas id='xxx'    width = 300px height = 300px></canvas>
   <div id=actions class="actions">
-    <button id='eraser'>橡皮</button>
-    <button id='pen'>画笔</button>
+    <svg class="icon" aria-hidden="true" id="eraser">
+        <use xlink:href="#icon-eraser-fill"></use>
+    </svg>
+    <svg class="icon active" aria-hidden="true" id="brush">
+        <use xlink:href="#icon-pencil-ruler-2-fill"></use>
+    </svg>
   </div>
+  <ol class="colors">
+      <li id="red" class="red"></li>
+      <li id="green" class="green"></li>
+      <li id="blue" class="blue"></li>
+      <li id="grey" class="grey active"></li>
+  </ol>
 <script src="./main.js"></script>
 </body>
 </html>
