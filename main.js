@@ -8,81 +8,79 @@ listenToUser(yyy);
 
 var eraserEnabled = false;
 brush.onclick = function () {
-  eraserEnabled=false;
-  brush.classList.add('active')
-  eraser.classList.remove('active')
+  eraserEnabled = false;
+  brush.classList.add("active");
+  eraser.classList.remove("active");
+};
+eraser.onclick = function () {
+  eraserEnabled = true;
+  eraser.classList.add("active");
+  brush.classList.remove("active");
+};
+red.onclick = function () {
+  context.strokeStyle = "#b8465f";
+  context.fillStyle = "#b8465f";
+  red.classList.add("active");
+  green.classList.remove("active");
+  blue.classList.remove("active");
+  grey.classList.remove("active");
+};
+green.onclick = function () {
+  context.strokeStyle = "#338161";
+  context.fillStyle = "#338161";
+  red.classList.remove("active");
+  green.classList.add("active");
+  blue.classList.remove("active");
+  grey.classList.remove("active");
+};
+blue.onclick = function () {
+  context.strokeStyle = "#2e4286";
+  context.fillStyle = "#2e4286";
+  red.classList.remove("active");
+  green.classList.remove("active");
+  blue.classList.add("active");
+  grey.classList.remove("active");
+};
+grey.onclick = function () {
+  context.strokeStyle = "#2b2b2c";
+  context.fillStyle = "#2b2b2c";
+  red.classList.remove("active");
+  green.classList.remove("active");
+  blue.classList.remove("active");
+  grey.classList.add("active");
+};
 
-}
-eraser.onclick = function(){
-  eraserEnabled=true;
-  eraser.classList.add('active')
-  brush.classList.remove('active')
+sLine.onclick = function () {
+  brushWidth = 4;
+  sLine.classList.add("active");
+  mLine.classList.remove("active");
+  lLine.classList.remove("active");
+};
+mLine.onclick = function () {
+  brushWidth = 8;
+  sLine.classList.remove("active");
+  mLine.classList.add("active");
+  lLine.classList.remove("active");
+};
+lLine.onclick = function () {
+  brushWidth = 12;
+  sLine.classList.remove("active");
+  mLine.classList.remove("active");
+  lLine.classList.add("active");
+};
+clear.onclick = function () {
+  context.clearRect(0, 0, yyy.width, yyy.height);
+};
 
-}
-red.onclick = function(){
-  context.strokeStyle = '#b8465f';
-  context.fillStyle = '#b8465f';
-  red.classList.add('active')
-  green.classList.remove('active')
-  blue.classList.remove('active')
-  grey.classList.remove('active')
-}
-green.onclick = function(){
-  context.strokeStyle = '#338161';
-  context.fillStyle = '#338161';
-  red.classList.remove('active')
-  green.classList.add('active')
-  blue.classList.remove('active')
-  grey.classList.remove('active')
-}
-blue.onclick = function(){
-  context.strokeStyle = '#2e4286';
-  context.fillStyle = '#2e4286';
-  red.classList.remove('active')
-  green.classList.remove('active')
-  blue.classList.add('active')
-  grey.classList.remove('active')
-}
-grey.onclick = function(){
-  context.strokeStyle = '#2b2b2c';
-  context.fillStyle = '#2b2b2c';
-  red.classList.remove('active')
-  green.classList.remove('active')
-  blue.classList.remove('active')
-  grey.classList.add('active')
-}
-
-sLine.onclick = function(){
-  brushWidth = 4
-  sLine.classList.add('active')
-  mLine.classList.remove('active')
-  lLine.classList.remove('active')
-}
-mLine.onclick = function(){
-  brushWidth = 8
-  sLine.classList.remove('active')
-  mLine.classList.add('active')
-  lLine.classList.remove('active')
-}
-lLine.onclick = function(){
-  brushWidth = 12
-  sLine.classList.remove('active')
-  mLine.classList.remove('active')
-  lLine.classList.add('active')
-}
-clear.onclick = function(){
-  context.clearRect(0,0,yyy.width,yyy.height)
-}
-
-save.onclick = function(){
- var url = yyy.toDataURL("image/png")
- var a = document.createElement('a')
- document.body.appendChild(a)
- a.href = url
- a.download = '我的画'
- a.target = '_blank'
- a.click()
-}
+save.onclick = function () {
+  var url = yyy.toDataURL("image/png");
+  var a = document.createElement("a");
+  document.body.appendChild(a);
+  a.href = url;
+  a.download = "我的画";
+  a.target = "_blank";
+  a.click();
+};
 /**********/
 
 function autoSetCanvasSize(canvas) {
@@ -99,7 +97,6 @@ function autoSetCanvasSize(canvas) {
     canvas.width = pageWidth;
     canvas.height = pageHeight;
   }
-
 }
 
 function drawCircle(x, y, radius) {
@@ -152,7 +149,7 @@ function listenToUser(canvas) {
           x: x,
           y: y,
         };
-        drawCircle(x, y, brushWidth/2);
+        drawCircle(x, y, brushWidth / 2);
         drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
         lastPoint = newPoint;
       }
@@ -189,7 +186,7 @@ function listenToUser(canvas) {
           x: x,
           y: y,
         };
-        drawCircle(x, y, brushWidth/2);
+        drawCircle(x, y, brushWidth / 2);
         drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
         lastPoint = newPoint;
       }

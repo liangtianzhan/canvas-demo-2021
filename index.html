@@ -1,41 +1,44 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <script src="//at.alicdn.com/t/font_2519035_p6vryp3vos.js"></script>
     <link rel="stylesheet" href="./syle.css">
-  <meta charset="zh-Hans">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的画板</title>
+    <meta charset="zh-Hans">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的画板</title>
 </head>
+
 <body>
-  <canvas id='xxx'    width = 300px height = 300px></canvas>
-  <div id=actions class="actions">
-    <svg class="icon" aria-hidden="true" id="eraser">
-        <use xlink:href="#icon-eraser-fill"></use>
-    </svg>
-    <svg class="icon active" aria-hidden="true" id="brush">
-        <use xlink:href="#icon-pencil-ruler-2-fill"></use>
-    </svg>
-  </div>
-  <ol class="colors">
-      <li id="red" class="red"></li>
-      <li id="green" class="green"></li>
-      <li id="blue" class="blue"></li>
-      <li id="grey" class="grey active"></li>
-  </ol>
-  <ol class="sizes">
-      <li id="sLine" class="sLine"></li>
-      <li id="mLine" class="mLine"></li>
-      <li id="lLine" class="lLine active"></li>
-  </ol>
-  <div class="systemActions">
-      <svg class="icon" aria-hidden="true" id="clear">
-        <use xlink:href="#icon-qr-scan-fill"></use>
-      </svg>
-      <svg class="icon" aria-hidden="true" id="save">
-        <use xlink:href="#icon-save"></use>
-      </svg>
-  </div>
-<script src="./main.js"></script>
+    <canvas id='xxx' width=300px height=300px></canvas>
+    <div id=actions class="actions">
+        <svg class="icon" aria-hidden="true" id="eraser">
+            <use xlink:href="#icon-eraser-fill"></use>
+        </svg>
+        <svg class="icon active" aria-hidden="true" id="brush">
+            <use xlink:href="#icon-pencil-ruler-2-fill"></use>
+        </svg>
+    </div>
+    <ol class="colors">
+        <li id="red" class="red"></li>
+        <li id="green" class="green"></li>
+        <li id="blue" class="blue"></li>
+        <li id="grey" class="grey active"></li>
+    </ol>
+    <ol class="sizes">
+        <li id="sLine" class="sLine"></li>
+        <li id="mLine" class="mLine"></li>
+        <li id="lLine" class="lLine active"></li>
+    </ol>
+    <div class="systemActions">
+        <svg class="icon" aria-hidden="true" id="clear">
+            <use xlink:href="#icon-qr-scan-fill"></use>
+        </svg>
+        <svg class="icon" aria-hidden="true" id="save">
+            <use xlink:href="#icon-save"></use>
+        </svg>
+    </div>
+    <script src="./main.js"></script>
 </body>
+
 </html>
