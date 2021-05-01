@@ -1,5 +1,6 @@
 var yyy = document.getElementById("xxx");
 var context = yyy.getContext("2d");
+var brushWidth = 12;
 
 autoSetCanvasSize(yyy);
 
@@ -51,8 +52,37 @@ grey.onclick = function(){
   grey.classList.add('active')
 }
 
+sLine.onclick = function(){
+  brushWidth = 4
+  sLine.classList.add('active')
+  mLine.classList.remove('active')
+  lLine.classList.remove('active')
+}
+mLine.onclick = function(){
+  brushWidth = 8
+  sLine.classList.remove('active')
+  mLine.classList.add('active')
+  lLine.classList.remove('active')
+}
+lLine.onclick = function(){
+  brushWidth = 12
+  sLine.classList.remove('active')
+  mLine.classList.remove('active')
+  lLine.classList.add('active')
+}
+clear.onclick = function(){
+  context.clearRect(0,0,yyy.width,yyy.height)
+}
 
-
+save.onclick = function(){
+ var url = yyy.toDataURL("image/png")
+ var a = document.createElement('a')
+ document.body.appendChild(a)
+ a.href = url
+ a.download = '我的画'
+ a.target = '_blank'
+ a.click()
+}
 /**********/
 
 function autoSetCanvasSize(canvas) {
@@ -69,6 +99,7 @@ function autoSetCanvasSize(canvas) {
     canvas.width = pageWidth;
     canvas.height = pageHeight;
   }
+
 }
 
 function drawCircle(x, y, radius) {
@@ -80,7 +111,7 @@ function drawCircle(x, y, radius) {
 function drawLine(x1, y1, x2, y2) {
   context.beginPath();
   context.moveTo(x1, y1); //起点
-  context.lineWidth = 10;
+  context.lineWidth = brushWidth;
   context.lineTo(x2, y2);
   context.stroke();
   context.closePath();
@@ -121,7 +152,7 @@ function listenToUser(canvas) {
           x: x,
           y: y,
         };
-        drawCircle(x, y, 5);
+        drawCircle(x, y, brushWidth/2);
         drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
         lastPoint = newPoint;
       }
@@ -158,7 +189,7 @@ function listenToUser(canvas) {
           x: x,
           y: y,
         };
-        drawCircle(x, y, 5);
+        drawCircle(x, y, brushWidth/2);
         drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y);
         lastPoint = newPoint;
       }

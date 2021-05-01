@@ -24,18 +24,18 @@ ul,ol{
  
  .actions{
    position:fixed;
-   top:40px;
-   left:40px;
+   top:30px;
+   left:20px;
  }
 
- .actions svg{
+ .actions svg,.systemActions svg{
    width:1.5em;
    height:1.5em;
    fill: #aaaaaa;
    transition:all 0.2s;
    margin:0 10px;
-
  }
+
  .actions svg.active{
    fill: rgb(43, 113, 194);
    transform:scale(1.3);
@@ -43,7 +43,7 @@ ul,ol{
 .colors{
     position:fixed;
     top:100px;
-    left: 50px;
+    left: 30px;
 
 }
 .colors >li{
@@ -75,3 +75,47 @@ ul,ol{
     box-shadow: 0px 4px 8px #9e9e9e;
     transform:scale(1.3);
 }
+
+.sizes{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    
+}
+.sizes > li{
+    margin:20px 0px;
+}
+.sizes > li.sLine
+{
+    height:0px;
+    width:30px;
+    border-top:4px solid rgb(182, 188, 194);
+    border-radius: 2px;
+}
+.sizes > li.mLine
+{
+    height:0px;
+    width:30px;
+    border-top:8px solid rgb(182, 188, 194);
+    border-radius: 2px;
+}
+.sizes > li.lLine
+{
+    height:0px;
+    width:30px;
+    border-top:12px solid rgb(182, 188, 194);
+    border-radius: 2px;
+}
+.sizes > li.active
+{
+    border-top-color:rgb(43, 113, 194);
+    
+}
+
+.systemActions{
+    position:fixed;
+    bottom:30px;
+    right:20px;
+  }
+  
+  
